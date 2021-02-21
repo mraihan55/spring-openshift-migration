@@ -27,12 +27,12 @@ public class SpringOpenshiftApplication {
 	
 	@GetMapping("/")
 	public String welcome() {
-		return "Welcome ..." ;		
+		return "Welcome ..." + bot;		
 	}
 
 	@GetMapping("/{input}")
 	public String congrats(@PathVariable String input) {
-		return "Welcome ..." +input+ " appliction is successfully deployed ...";		
+		return "Welcome ..." +input+ " appliction is successfully deployed ..." + bot;		
 	}
 
 	public static void main(String[] args) {

@@ -10,9 +10,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SpringOpenshiftApplication {
 	
+	String bot = "<script>\n"
+			+ "  window.watsonAssistantChatOptions = {\n"
+			+ "      integrationID: \"c1c6e890-ac87-4d47-a98d-6bd4256dd04b\", // The ID of this integration.\n"
+			+ "      region: \"us-south\", // The region your integration is hosted in.\n"
+			+ "      serviceInstanceID: \"c59f636a-c344-4b27-9dc3-8ef0117b96ae\", // The ID of your service instance.\n"
+			+ "      onLoad: function(instance) { instance.render(); }\n"
+			+ "    };\n"
+			+ "  setTimeout(function(){\n"
+			+ "    const t=document.createElement('script');\n"
+			+ "    t.src=\"https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js\";\n"
+			+ "    document.head.appendChild(t);\n"
+			+ "  });\n"
+			+ "</script>";
+	
+	
 	@GetMapping("/")
 	public String welcome() {
-		return "Welcome ...";		
+		return "Welcome ..." + bot;		
 	}
 
 	@GetMapping("/{input}")
@@ -22,6 +37,9 @@ public class SpringOpenshiftApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringOpenshiftApplication.class, args);
+			
+		
+		
 	}
 
 }

@@ -27,7 +27,7 @@ public class SpringOpenshiftApplication {
 	
 	@GetMapping("/")
 	public String welcome() {
-		return "Welcome ..." ;		
+		return "Welcome ..." +bot;		
 	}
 
 	@GetMapping("/{input}")
